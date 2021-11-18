@@ -1,8 +1,11 @@
 # Násobička matic
-Tento program přijímá dvě matice na standratním vstupu a vrací jejich součin na standartní výstup. Data jsou v paměti ukládána efektivně, aby byl maximální cache hit. Jsou použita i vlákna. Na scanf čísel jsem vyrobil vlastní "rychlejší" funkci.
+Tento program přijímá dvě matice na standratním vstupu a vrací jejich součin na standartní výstup. 
+
+##
+Data jsou v paměti ukládána efektivně, aby byl maximální cache hit. Jsou použita i vlákna. Na scanf čísel jsem vyrobil vlastní "rychlejší" funkci.
 
 ## Kompilace
-Jedná se o jednosouborový program, čili CMake je zbytečný. Stačí použít `g++ -Wall -Wextra -g -pthread -std=c++11 -Ofast matrix.cpp -o ./main`. Kdyby byl nezlomitelnou podmínkou mohu jej doplnit.
+Jedná se o jednosouborový program. Stačí použít `g++ -Wall -Wextra -g -pthread -std=c++11 -Ofast matrix.cpp -o ./main` anebo `cmake CMakeLists.txt` k vygenerování Makefile. 
 
 ## Formát vstupu
 Vstup je formátován takto:

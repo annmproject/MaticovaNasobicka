@@ -97,11 +97,18 @@ int main(int argc, char *argv[]) {
     std::int32_t A_rows, A_cols;
     std::int32_t B_rows, B_cols;
     std::int32_t AB_rows, AB_cols;
-    std::chrono::high_resolution_clock::time_point start, stop;
+    // std::chrono::high_resolution_clock::time_point start, stop;
 
     // --help argument
     if(argc == 2 && strcmp(argv[1], "--help") == 0) {
         puts("This is how to use this program...");
+        puts("Write to standard input two matrices in format:");
+        puts("num_of_rows num_of_columns");
+        puts("data");
+        puts("num_of_rows num_of_columns");
+        puts("data");
+        puts("If you want to run this app as single thread use switch -singleThread");
+        puts("If you want to this help you see use switch --help");
         return 0;
     }
 
@@ -137,7 +144,7 @@ int main(int argc, char *argv[]) {
     std::swap(B_rows, B_cols);
 
     // stopwatch
-    start = std::chrono::high_resolution_clock::now();
+    // start = std::chrono::high_resolution_clock::now();
     
     // Matrix AB
     AB_rows = A_rows;
@@ -165,8 +172,8 @@ int main(int argc, char *argv[]) {
     }
     
     // stopwatch
-    stop = std::chrono::high_resolution_clock::now();
-    std::cout << "Time taken " << std::chrono::duration_cast< std::chrono::duration<double> >(stop - start).count() << " seconds.\n";
+    //stop = std::chrono::high_resolution_clock::now();
+    //std::cout << "Time taken " << std::chrono::duration_cast< std::chrono::duration<double> >(stop - start).count() << " seconds.\n";
 
     // print
     std::cout << AB_rows << " " << AB_cols << std::endl;
