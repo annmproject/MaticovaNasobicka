@@ -1,8 +1,8 @@
 # Násobička matic
 Tento program přijímá dvě matice na standratním vstupu a vrací jejich součin na standartní výstup. 
 
-##
-Data jsou v paměti ukládána efektivně, aby byl maximální cache hit. Jsou použita i vlákna. Na scanf čísel jsem vyrobil vlastní "rychlejší" funkci.
+## V Čem je řešení zajímávé?
+Data jsou v paměti ukládána výhodně. Matice se ukládájí transponovaně tak, aby byl maximální cache hit v paměti při práci s jednolivými řádky matice. Program byl napsán efektivně za použití C++ vychytávek a pomocných funkcí tak, aby se autor neupsal k smrti a nedošlo ke snížení kvality celého řešení. Při načítání velkého množství čísel jsou standartní funkce velmi pomalé, a proto byla napsána vlastní funkce `getNum()`. Ve výchozí podobě se při výpočtu řešení používají vlákna. To lze vypnout za pomocí přepínače. Celý program se překvapivě rychlostí vyrovná implementaci v Numpy, což je poměrně překvapivé k "jednoduchosti" řešení.
 
 ## Kompilace
 Jedná se o jednosouborový program. Stačí použít `g++ -Wall -Wextra -g -pthread -std=c++11 -Ofast matrix.cpp -o ./main` anebo `cmake CMakeLists.txt` k vygenerování Makefile. 
